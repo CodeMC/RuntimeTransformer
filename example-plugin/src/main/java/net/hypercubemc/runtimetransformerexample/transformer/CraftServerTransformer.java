@@ -1,7 +1,7 @@
 package net.hypercubemc.runtimetransformerexample.transformer;
 
 import net.hypercubemc.runtimetransformer.annotation.Inject;
-import net.hypercubemc.runtimetransformer.annotation.InjectionType;Yamakaj
+import net.hypercubemc.runtimetransformer.annotation.InjectionType;
 import net.hypercubemc.runtimetransformer.annotation.Transform;
 
 import org.bukkit.craftbukkit.v1_16_R3.CraftServer;
