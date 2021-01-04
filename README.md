@@ -68,12 +68,12 @@ There are three types of Injection:
 
 ## Compiling
 
-Run this command to build the project.
+Run the below command to build the project.
 `./gradlew build`
 
 ## Installation
 
-To install the api and agent jar into your local maven repo run
+To install the api and agent jar into your local maven repo, run
 `./gradlew publishToMavenLocal`
 
 The library can then be included using one of the following dependency definitions:
