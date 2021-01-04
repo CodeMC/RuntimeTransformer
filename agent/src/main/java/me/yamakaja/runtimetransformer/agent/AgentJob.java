@@ -13,9 +13,6 @@ import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.*;
 
-/**
- * Created by Yamakaja on 19.05.17.
- */
 public class AgentJob {
 
     private final List<MethodJob> methodJobs;
@@ -31,7 +28,7 @@ public class AgentJob {
 
         this.readTransformationTarget(transformer);
 
-        ClassNode transformerNode = new ClassNode(Opcodes.ASM5);
+        ClassNode transformerNode = new ClassNode(Opcodes.ASM9);
         ClassReader transformerReader;
 
         try {
@@ -76,7 +73,7 @@ public class AgentJob {
                 .filter(node -> node.name.matches(".*\\$[0-9]+"))
                 .filter(node -> node.innerName == null && node.outerName == null)
                 .map(node -> {
-                    ClassNode innerClassNode = new ClassNode(Opcodes.ASM5);
+                    ClassNode innerClassNode = new ClassNode(Opcodes.ASM9);
 
                     try (InputStream inputStream = this.transformer.getResourceAsStream(node.name.substring(node.name.lastIndexOf('/') + 1) + ".class")) {
                         ClassReader reader = new ClassReader(inputStream);

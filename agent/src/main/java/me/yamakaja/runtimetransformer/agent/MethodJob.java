@@ -8,9 +8,6 @@ import org.objectweb.asm.tree.*;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * Created by Yamakaja on 19.05.17.
- */
 public class MethodJob {
 
     private InjectionType type;
@@ -45,15 +42,9 @@ public class MethodJob {
 
     public void process() {
         switch (type) {
-            case OVERRIDE:
-                override();
-                break;
-            case INSERT:
-                insert();
-                break;
-            case APPEND:
-                append();
-                break;
+            case OVERRIDE -> override();
+            case INSERT -> insert();
+            case APPEND -> append();
         }
 
         transformInvocations();
