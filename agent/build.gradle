@@ -12,7 +12,7 @@ jar {
 
     manifest {
         attributes(
-                "Agent-Class": "me.yamakaja.runtimetransformer.agent.Agent",
+                "Agent-Class": "net.hypercubemc.runtimetransformer.agent.Agent",
                 "Can-Retransform-Classes": "true",
                 "Can-Redefine-Classes": "true"
         )
@@ -24,7 +24,7 @@ apply plugin: 'maven-publish'
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId 'me.yamakaja.runtimetransformer'
+            groupId 'net.hypercubemc.runtimetransformer'
             artifactId 'agent'
             version  project.getParent().getVersion()
 

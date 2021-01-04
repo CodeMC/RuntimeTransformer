@@ -1,10 +1,10 @@
-rootProject.name = 'runtimetransformer'
-
-include 'example-plugin'
-project(":example-plugin").projectDir = "$rootDir/example-plugin" as File
+rootProject.name = 'RuntimeTransformer'
 
 include 'agent'
 project(":agent").projectDir = "$rootDir/agent" as File
 
 include 'api'
 project(":api").projectDir = "$rootDir/api" as File
+
+include 'example-plugin'
+project(":example-plugin").projectDir = "$rootDir/example-plugin" as File

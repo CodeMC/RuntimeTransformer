@@ -1,6 +1,6 @@
-name: RuntimeTransformer
-main: me.yamakaja.runtimetransformer.plugin.ExampleTransformationPlugin
-author: Yamakaja
+name: RuntimeTransformerExample
+main: net.hypercubemc.runtimetransformerexample.ExampleTransformationPlugin
+author: Justsnoopy30
 version: 0.0.1
 commands:
   debugtest: {}

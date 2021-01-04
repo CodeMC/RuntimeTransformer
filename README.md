@@ -7,7 +7,7 @@ Note, this method comes with disadvantages, for example method modifiers may not
 
 To install the artifact into your local maven repo execute the correct gradle wrapper with the "publishToMavenLocal" task, that is ```gradlew.bat publishToMavenLocal``` under Windows, and ```./gradlew publishToMavenLocal``` under *nix;
 
-Lets assume we want to inject an event handler into the `setHealth` method of `EntityLiving`,
+Let's assume we want to inject an event handler into the `setHealth` method of `EntityLiving`,
 therefore the method should something like this after transformation:
 
 ```java
@@ -48,11 +48,11 @@ public class EntityLivingTransformer extends EntityLiving { // Extending EntityL
 And that's pretty much it, now we just need to create our runtime transformer:
 
 ```java
-new RuntimeTransformer( EntityLivingTransformer.class );
+new RuntimeTransformer(EntityLivingTransformer.class);
 ```
 
-For Java 9+ runtimes, you have to allow self attaching by adding this startup `-Djdk.attach.allowAttachSelf=true`
-parameter or creating the `RuntimeTransformer` instance in a separate process.
+Lastly, you have to allow self attaching by adding this startup `-Djdk.attach.allowAttachSelf=true`
+parameter to your jvm startup arguments or by creating the `RuntimeTransformer` instance in a separate process.
 
 And we're done.
 
@@ -73,22 +73,22 @@ Run the below command to build the project.
 
 ## Installation
 
-To install the api and agent jar into your local maven repo, run
+To install the api and agent jars into your local maven repo, run
 `./gradlew publishToMavenLocal`
 
 The library can then be included using one of the following dependency definitions:
 ### Maven
 ```xml
         <dependency>
-            <groupId>me.yamakaja.runtimetransformer</groupId>
+            <groupId>net.hypercubemc.runtimetransformer</groupId>
             <artifactId>api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 ```
 ### Gradle
 ```groovy
-    compile "me.yamakaja.runtimetransformer:api:1.0-SNAPSHOT"
-    compileOnly "me.yamakaja.runtimetransformer:agent:1.0-SNAPSHOT"
+    compile "net.hypercubemc.runtimetransformer:api:1.0-SNAPSHOT"
+    compileOnly "net.hypercubemc.runtimetransformer:agent:1.0-SNAPSHOT"
 ```
 
 Don't forget to actually include the artifact in your final jar, using the `maven-shade-plugin` or an equivalent alternative suiting your build system such as the below snippet for Gradle
@@ -102,3 +102,27 @@ jar {
 }
 ```
 
+## Compatibility
+Only supports the latest Java release.
+
+## License
+For all code written or changed by Justsnoopy30 and future contributors, the code is licensed under the GPL, Copyright Justsnoopy30.
+See below for more information.
+
+    RuntimeTransformer
+    Copyright (C) 2020  Justsnoopy30
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+The license and copyright for code written by MiniDigger and Yamakaja can be found in the ORIGINAL_LICENSE file.

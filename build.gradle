@@ -1,4 +1,4 @@
-group 'me.yamakaja.runtimetransformer'
+group 'net.hypercubemc.runtimetransformer'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'base'
