@@ -12,9 +12,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
-/**
- * Created by Yamakaja on 19.05.17.
- */
 public class ExampleTransformationPlugin extends JavaPlugin {
 
     @Override
@@ -32,7 +29,9 @@ public class ExampleTransformationPlugin extends JavaPlugin {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         ItemStack stack = ((Player) sender).getInventory().getItemInMainHand();
         SkullMeta itemMeta = (SkullMeta) stack.getItemMeta();
-        itemMeta.setOwner("Yamakaja");
+        if (itemMeta != null) {
+            itemMeta.setOwner("Yamakaja");
+        }
         stack.setItemMeta(itemMeta);
         ((Player) sender).getInventory().setItemInMainHand(stack);
         return true;

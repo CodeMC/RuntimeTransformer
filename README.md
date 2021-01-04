@@ -68,18 +68,16 @@ There are three types of Injection:
 
 ## Compiling
 
-Run this command to build the api project.
-`./gradlew jar`
-
-If you want to build the example project add `-Pbuild-example`
-`./gradlew jar -Pbuild-example`
+Run this command to build the project.
+`./gradlew build`
 
 ## Installation
 
-To install the api jar into your local maven repo run
+To install the api and agent jar into your local maven repo run
 `./gradlew publishToMavenLocal`
 
-The correct artifact can then be included using the following dependency definition:
+The library can then be included using one of the following dependency definitions:
+### Maven
 ```xml
         <dependency>
             <groupId>me.yamakaja.runtimetransformer</groupId>
@@ -87,17 +85,20 @@ The correct artifact can then be included using the following dependency definit
             <version>1.0-SNAPSHOT</version>
         </dependency>
 ```
-
-Don't forget to actually include the artifact in your final jar, using the `maven-shade-plugin` or an equivalent alternative!
-
-## Alternative: Maven repository
-
-@sgdc3 has offered to host the artifacts on their build server, you can access them by adding the following to your
-`<repositories>` (This way you wont have to compile it locally):
-
-```xml
-        <repository>
-            <id>codemc</id>
-            <url>https://repo.codemc.org/repository/maven-public/</url>
-        </repository>
+### Gradle
+```groovy
+    compile "me.yamakaja.runtimetransformer:api:1.0-SNAPSHOT"
+    compileOnly "me.yamakaja.runtimetransformer:agent:1.0-SNAPSHOT"
 ```
+
+Don't forget to actually include the artifact in your final jar, using the `maven-shade-plugin` or an equivalent alternative suiting your build system such as the below snippet for Gradle
+```groovy
+jar {
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+```
+
