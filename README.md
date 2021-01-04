@@ -103,7 +103,7 @@ jar {
 ```
 
 ## Compatibility
-Only supports the latest Java release.
+Only supports the latest Java release. AdoptOpenJDK (https://adoptopenjdk.net/) is recommended.
 
 ## License
 For all code written or changed by Justsnoopy30 and future contributors, the code is licensed under the GPL, Copyright Justsnoopy30.
