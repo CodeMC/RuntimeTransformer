@@ -4,9 +4,6 @@ import me.yamakaja.runtimetransformer.annotation.CallParameters;
 
 import java.lang.reflect.Method;
 
-/**
- * Created by Yamakaja on 3/5/18.
- */
 public class SpecialInvocation {
 
     private Method method;

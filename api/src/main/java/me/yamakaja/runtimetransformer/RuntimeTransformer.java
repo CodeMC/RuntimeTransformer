@@ -7,9 +7,6 @@ import java.net.URLClassLoader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * Created by Yamakaja on 19.05.17.
- */
 public class RuntimeTransformer {
 
     private static final String ATTACH_MOD_PATH = "jmods/jdk.attach.jmod";

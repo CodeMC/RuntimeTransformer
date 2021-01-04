@@ -15,9 +15,6 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.concurrent.atomic.AtomicLong;
 
-/**
- * Created by Yamakaja on 3/5/18.
- */
 public class ClassFactory {
 
     private static final String classPrefix = "me/yamakaja/runtimetransformer/generated/Anonymous$";

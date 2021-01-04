@@ -10,9 +10,6 @@ import java.lang.management.ManagementFactory;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
-/**
- * Created by Yamakaja on 9/2/17.
- */
 public class TransformerUtils {
 
     static void attachAgent(File agentFile, Class<?>[] transformers) {

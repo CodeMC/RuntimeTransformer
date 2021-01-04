@@ -7,9 +7,6 @@ import java.lang.instrument.UnmodifiableClassException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Yamakaja on 19.05.17.
- */
 public class Agent {
 
     private static Agent instance;
