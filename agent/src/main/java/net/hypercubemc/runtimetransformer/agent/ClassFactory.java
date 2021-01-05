@@ -84,7 +84,7 @@ public class ClassFactory {
 
         node.outerClass = null;
 
-        ClassWriter writer = new ClassWriter(Opcodes.ASM5);
+        ClassWriter writer = new ClassWriter(Opcodes.ASM9);
         node.accept(writer);
 
         byte[] data = writer.toByteArray();
