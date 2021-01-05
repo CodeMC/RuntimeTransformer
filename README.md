@@ -51,8 +51,7 @@ And that's pretty much it, now we just need to create our runtime transformer:
 new RuntimeTransformer(EntityLivingTransformer.class);
 ```
 
-Lastly, you have to allow self attaching by adding this startup `-Djdk.attach.allowAttachSelf=true`
-parameter to your jvm startup arguments or by creating the `RuntimeTransformer` instance in a separate process.
+Lastly, you have to allow self attaching by adding this startup parameter, `-Djdk.attach.allowAttachSelf=true`, to your jvm startup arguments or by creating the `RuntimeTransformer` instance in a separate process.
 
 And we're done.
 
