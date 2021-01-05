@@ -27,7 +27,7 @@ public class ClassFactory {
     }
 
     public static Class<?> generateAnonymousClassSubstitute(String newOuterClass, ClassNode paramNode, ClassLoader targetClassLoader) {
-        ClassNode node = new ClassNode(Opcodes.ASM5);
+        ClassNode node = new ClassNode(Opcodes.ASM9);
         paramNode.accept(node);
 
         String originalClassName = node.name;
