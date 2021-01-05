@@ -34,7 +34,7 @@ public class ClassTransformer implements ClassFileTransformer {
         try {
             ClassReader reader = new ClassReader(classfileBuffer);
 
-            ClassNode node = new ClassNode(Opcodes.ASM5);
+            ClassNode node = new ClassNode(Opcodes.ASM9);
             reader.accept(node, 0);
 
             this.agentJobs.stream()
