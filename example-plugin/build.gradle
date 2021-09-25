@@ -1,12 +1,14 @@
+configurations.implementation.setCanBeResolved(true)
+
 dependencies {
     compileOnly "org.spigotmc:spigot:1.16.4-R0.1-SNAPSHOT"
-    compile project(":api")
+    implementation project(":api")
     compileOnly project(":agent")
 }
 
 jar {
     from {
-        configurations.compile.collect {
+        configurations.implementation.collect {
             it.isDirectory() ? it : zipTree(it)
         }
     }
